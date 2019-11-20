@@ -1,0 +1,65 @@
+apply plugin: "com.android.application"
+apply plugin: "kotlin-android"
+apply plugin: "kotlin-android-extensions"
+apply plugin: "kotlin-kapt"
+apply plugin: "io.fabric"
+apply from: "../versions.gradle"
+apply from: "../common.gradle"
+
+android {
+    compileSdkVersion version_compile_sdk
+    buildToolsVersion version_build_tools
+
+    defaultConfig {
+        applicationId "com.umpteenthdev.revolutsample"
+        minSdkVersion version_min_sdk
+        targetSdkVersion version_target_sdk
+        versionCode app_version_code
+        versionName app_version_name
+    }
+
+    buildTypes {
+
+        debug {
+            applicationIdSuffix = ".debug"
+            minifyEnabled false
+            shrinkResources false
+        }
+
+        release {
+            minifyEnabled true
+            shrinkResources true
+            proguardFiles getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro"
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+
+    implementation project(":core")
+    implementation project(":rates")
+    implementation project(":rates-api")
+
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation "androidx.appcompat:appcompat:1.1.0"
+
+    implementation "com.crashlytics.sdk.android:crashlytics:2.10.1"
+
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$version_coroutines"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$version_coroutines"
+
+    implementation "com.google.dagger:dagger:$version_dagger"
+    kapt "com.google.dagger:dagger-compiler:$version_dagger"
+
+    implementation "com.squareup.okhttp3:okhttp:$version_okhttp"
+    implementation "com.squareup.okhttp3:logging-interceptor:4.2.1"
+
+    implementation "io.paperdb:paperdb:$version_paper"
+}
+
+apply plugin: "com.google.gms.google-services"

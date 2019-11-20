@@ -1,0 +1,30 @@
+apply from: "../versions.gradle"
+apply from: "../common.gradle"
+
+android {
+    compileSdkVersion version_compile_sdk
+    buildToolsVersion version_build_tools
+
+    defaultConfig {
+        minSdkVersion version_min_sdk
+        targetSdkVersion version_target_sdk
+        versionCode app_version_code
+        versionName app_version_name
+    }
+
+    buildTypes {
+
+        debug {
+            minifyEnabled false
+        }
+
+        release {
+            minifyEnabled true
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}

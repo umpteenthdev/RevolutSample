@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:clickable="true"
+    android:focusable="true"
+    android:paddingStart="16dp"
+    android:paddingEnd="16dp"
+    >
+
+    <ImageView
+        android:id="@+id/currencyIcon"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        android:contentDescription="@string/cd_flag_image"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+    <TextView
+        android:id="@+id/currencySymbol"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:ellipsize="end"
+        android:fontFamily="@font/roboto_bold"
+        android:maxLines="1"
+        android:textColor="@color/black_100"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@id/currencyFullName"
+        app:layout_constraintEnd_toStartOf="@id/currencyInput"
+        app:layout_constraintStart_toEndOf="@id/currencyIcon"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="packed"
+        tools:text="EUR"
+        />
+
+    <TextView
+        android:id="@+id/currencyFullName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:maxLines="1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/currencyInput"
+        app:layout_constraintStart_toStartOf="@id/currencySymbol"
+        app:layout_constraintTop_toBottomOf="@id/currencySymbol"
+        tools:text="Euro"
+        />
+
+    <EditText
+        android:id="@+id/currencyInput"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="@string/hint_currency_input"
+        android:importantForAutofill="no"
+        android:inputType="numberDecimal"
+        android:maxLines="1"
+        android:textAlignment="textEnd"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

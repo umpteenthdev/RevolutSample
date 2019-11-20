@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="rates_fragment_title">Rates</string>
+    <string name="cd_flag_image">Flag image</string>
+    <string name="hint_currency_input"> 0</string>
+    <string name="something_went_wrong">Something went wrong</string>
+    <string name="retry">Retry</string>
+
+</resources>

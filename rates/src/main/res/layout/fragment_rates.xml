@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+
+    <Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?android:attr/actionBarSize"
+        android:title="@string/rates_fragment_title"
+        />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/ratesRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        tools:itemCount="2"
+        tools:listitem="@layout/item_rate"
+        tools:visibility="visible"
+        />
+
+    <ProgressBar
+        android:id="@+id/ratesProgressIndicator"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        tools:layout_height="wrap_content"
+        />
+
+    <FrameLayout
+        android:id="@+id/errorStateContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:orientation="vertical"
+        android:visibility="gone"
+        tools:visibility="visible"
+        >
+
+        <include layout="@layout/layout_something_went_wrong" />
+    </FrameLayout>
+
+
+</LinearLayout>

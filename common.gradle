@@ -1,0 +1,8 @@
+ext {
+    version_min_sdk = 21
+    version_compile_sdk = 28
+    version_target_sdk = 28
+    version_build_tools = "29.0.2"
+    app_version_code = 1
+    app_version_name = "0.1"
+}

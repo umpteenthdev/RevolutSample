@@ -1,0 +1,5 @@
+rootProject.name = 'RevolutSample'
+include ':app',
+        ':rates',
+        ':rates-api',
+        ':core'
