@@ -2,6 +2,7 @@ package com.umpteenthdev.revolutsample.di
 
 import android.content.Context
 import com.umpteenthdev.revolutsample.core.di.AppDependencies
+import com.umpteenthdev.revolutsample.outer.android.App
 import com.umpteenthdev.revolutsample.outer.android.MainActivity
 import dagger.BindsInstance
 import dagger.Component
@@ -10,6 +11,7 @@ import dagger.Component
 @Component(modules = [AppModule::class])
 interface AppComponent : AppDependencies {
 
+    fun inject(app: App)
     fun inject(mainActivity: MainActivity)
 
     @Component.Factory

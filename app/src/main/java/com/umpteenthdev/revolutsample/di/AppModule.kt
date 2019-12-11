@@ -7,6 +7,8 @@ import com.umpteenthdev.revolutsample.core.outer.navigation.RootIntentFactory
 import com.umpteenthdev.revolutsample.core.usecases.ExceptionMapper
 import com.umpteenthdev.revolutsample.outer.navigation.RootFragmentFactoryImpl
 import com.umpteenthdev.revolutsample.outer.navigation.RootIntentFactoryImpl
+import com.umpteenthdev.revolutsample.outer.performance.CommandLineHelper
+import com.umpteenthdev.revolutsample.outer.performance.CommandLineHelperImpl
 import com.umpteenthdev.revolutsample.usecases.ExceptionMapperImpl
 import dagger.Binds
 import dagger.Module
@@ -28,6 +30,10 @@ abstract class AppModule {
     @Binds
     @AppScope
     abstract fun exceptionMapper(impl: ExceptionMapperImpl): ExceptionMapper
+
+    @Binds
+    @AppScope
+    abstract fun commandLineHelper(impl: CommandLineHelperImpl): CommandLineHelper
 
     @Module
     companion object {

@@ -3,6 +3,7 @@ apply plugin: "kotlin-android"
 apply plugin: "kotlin-android-extensions"
 apply plugin: "kotlin-kapt"
 apply plugin: "io.fabric"
+apply plugin: "com.google.firebase.firebase-perf"
 apply from: "../versions.gradle"
 apply from: "../common.gradle"
 
@@ -60,6 +61,8 @@ dependencies {
     implementation "com.squareup.okhttp3:logging-interceptor:4.2.1"
 
     implementation "io.paperdb:paperdb:$version_paper"
+
+    implementation "com.google.firebase:firebase-perf:$version_firebase_performance"
 }
 
 apply plugin: "com.google.gms.google-services"

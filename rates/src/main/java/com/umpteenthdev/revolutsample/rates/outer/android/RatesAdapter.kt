@@ -11,6 +11,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
+import com.google.firebase.perf.metrics.AddTrace
 import com.umpteenthdev.revolutsample.core.outer.android.RegexInputFilter
 import com.umpteenthdev.revolutsample.rates.R
 import com.umpteenthdev.revolutsample.rates.adapters.imageloading.ImageLoader
@@ -34,6 +35,7 @@ class RatesAdapter(
     private var isOnBindExecuting = false
     private val inputMethodManager: InputMethodManager by lazy { appContext.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager }
 
+    @AddTrace(name = "RatesAdapter_ViewHolder_Creation", enabled = true)
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RateViewHolder = RateViewHolder(parent)
 
     override fun onBindViewHolder(holder: RateViewHolder, position: Int) {
